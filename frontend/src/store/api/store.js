@@ -12,15 +12,15 @@ export const getStore = async () => {
       {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
           Authorization: 'Bearer ' + token
         },
         body: JSON.stringify({
-          product,
-          seller,
-          price,
-          image
+          "product":product,
+          "seller":seller,
+          "price":price,
+          "image":image
         })
       }
     );

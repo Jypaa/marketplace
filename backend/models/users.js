@@ -1,11 +1,12 @@
 const pool = require('../db/pool');
 
-const users = { 
+const users = {
   create: (user) => new Promise((resolve, reject) => {
     pool.getConnection((err, connection) => {
       if(err) {
         return reject(err);
       }
+
       connection.query('INSERT INTO users SET ?;', user, (err, result) => {
         connection.release();
         if(err) {
@@ -16,13 +17,12 @@ const users = {
       });
     });
   }),
-findByEmail: (email) => new Promise((resolve, reject) => {
+  findByEmail: (email) => new Promise((resolve, reject) => {
     pool.getConnection((err, connection) => {
       if(err) {
         return reject(err);
       }
-      const selectQuery = 'SELECT * FROM users WHERE email LIKE ?;';
-      connection.query(selectQuery, email, (err, result) => {
+      connection.query('SELECT * FROM users WHERE email LIKE ?;', email, (err, result) => {
         connection.release();
         if(err) {
           return reject(err);
@@ -31,7 +31,6 @@ findByEmail: (email) => new Promise((resolve, reject) => {
       });
     });
   })
+};
 
-}
-
-module.exports = users
+module.exports = users;

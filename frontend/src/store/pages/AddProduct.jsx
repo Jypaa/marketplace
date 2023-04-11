@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useContext} from "react";
 import Input from "../../shared/components/input/Input";
 import Button from "../../shared/components/button/Button";
 import './AddProduct.css';
@@ -36,9 +36,9 @@ const productSubmitHandler = async event => {
   return (
     
 <form className="product-form" onSubmit={productSubmitHandler}>
-      <Input id="product" ref={productRef} type="text" label="product" />
-      <Input id="seller" ref={sellerRef} type="text" label="seller" />
-      <Input id="price" ref={priceRef} type="text" label="price" />
+      <Input id="product" ref={productRef} type="text" label="Product" />
+      <Input id="seller" ref={sellerRef} type="text" label="Seller" />
+      <Input id="price" ref={priceRef} type="text" label="Price" />
       <Input id="image" ref={imageRef} type="text" label="Image Link" />
       <Button type="submit">
         Add Product

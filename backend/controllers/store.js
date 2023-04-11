@@ -1,4 +1,5 @@
 // require the model
+const Joi = require('joi');
 const store = require('../models/store');
 
 // async method that uses the functions in the model.
@@ -20,8 +21,8 @@ const getProductById = async (req, res) => {
 const createProduct = async (req, res) => {
   const schema = Joi.object({
     product: Joi.string().min(4).required(),
-    seller: Joi.string().min(4).required(),
-    price: Joi.string().min(4).required(),
+    seller: Joi.string().required(),
+    price: Joi.string().required(),
     image: Joi.string()
   });
   const { error } = schema.validate(req.body);
@@ -35,18 +36,23 @@ const createProduct = async (req, res) => {
     price: req.body.price,
     image: req.body.image
   }
-}
-
-const updateProduct = async (req, res) => {
-  const store = {
-    id: req.body.id,
-    name: req.body.name,
-    product: req.body.product,
-  };
-  const response = await store.updateById(store);
-  if (response) {
-    res.send(store);
+/*
+  try {
+    const result = await store.findByStore(store);
+    if(result.length > 0) {
+      res.status(400).send('Product is in the database already');
+      return;
+    }
+    const response = await store.create(store);
+    if(response) {
+      store.id = response.insertId;
+      res.status(201).send(store);
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("Something went wrong");
   }
+*/
 };
 
 const deleteProduct = async (req, res) => {
@@ -63,5 +69,4 @@ module.exports = {
   deleteProduct,
   getStore,
   getProductById,
-  updateProduct,
 };

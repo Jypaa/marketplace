@@ -20,6 +20,8 @@ import './App.css';
 
 const queryClient = new QueryClient();
 
+let logoutTimer;
+
 function App() {
   const [token, setToken] = useState(false);
   const [userId, setuser] = useState(false);
@@ -30,13 +32,27 @@ function App() {
   const login = useCallback((uid, token, expirationDate) => {
     setToken(token);
     setuser(uid);
-    const tokenExpirationDate = expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
-    setTokenExpirationDate(tokenExpirationDate);
-    localStorage.setItem(
+    //current date + 1h
+    const tokenExpirationDate = 
+      expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
+      setTokenExpirationDate(tokenExpirationDate);
+      localStorage.setItem(
       'userData',
-      JSON.stringify({userId: uid, token, expiration: tokenExpirationDate.toISOString()})
+      JSON.stringify({
+        userId: uid, 
+        token,
+        expiration: tokenExpirationDate.toISOString()
+      })
     )
   },[]);
+
+  const logout = useCallback(() => {
+    setToken(null);
+    setuser(null);
+    setTokenExpirationDate(null);
+    localStorage.removeItem('userData');
+  },[]);
+
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem('userData'));
     if (storedData && storedData.token &&
@@ -46,12 +62,14 @@ function App() {
     }
   }, [login]);
 
-  const logout = useCallback(() => {
-    setToken(null);
-    setuser(null);
-    setTokenExpirationDate(null);
-    localStorage.removeItem('userData'); 
-  },[]);
+  useEffect(() => {
+    if (token && tokenExpirationDate) {
+      const remainingTime = tokenExpirationDate.getTime() - new Date().getTime();
+      logoutTimer = setTimeout(logout, remainingTime);
+    } else {
+      clearTimeout(logoutTimer);
+    }
+  }, [token, logout, tokenExpirationDate]);
 
   let routes;
   if (token) {

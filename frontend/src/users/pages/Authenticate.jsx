@@ -1,11 +1,12 @@
-import React, { useRef, useState} from "react";
-import { useMutation } from "react-query";
+import { useRef, useState, useContext } from 'react';
+import { useMutation } from 'react-query';
 
-import Card from "../../shared/components/card/Card";
-import Input from "../../shared/components/input/Input";
-import Button from "../../shared/components/button/Button";
+import Button from '../../shared/components/button/Button';
+import Card from '../../shared/components/card/Card';
+import Input from '../../shared/components/input/Input';
 
-import { signUpUser, loginUser } from "../../store/api/users";
+import { loginUser, signUpUser } from '../api/users';
+import { AuthContext } from '../../shared/context/auth-context';
 
 import './Authenticate.css';
 
@@ -14,67 +15,68 @@ const Authenticate = props => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
- 
   const [isLoginMode, setLoginMode] = useState(true);
+  const auth = useContext(AuthContext);
 
-  const switchModeHanlder = () => {
+  const switchModeHandler = () => {
     setLoginMode(prevMode => !prevMode);
   }
 
-const loginUserMutation = useMutation({
-    mutationFn: loginUser, 
+  const signUpUserMutation = useMutation({
+    mutationFn: signUpUser,
     onSuccess: (data) => {
       console.log(data);
       auth.login(data.id, data.token);
     },
     onError: (error) => {
-      console.log(error);
-    }
-  });
- const signUpUserMutation = useMutation({
-    mutationFn: signUpUser, 
-    onSuccess: (data) => {
-      console.log(data);
-      auth.login(data.id, data.token);
-    },
-    onError: (error) => {
-      console.log(error);
+      console.log(error)
     }
   });
 
-  
-const onSubmitHandler = event => {
+  const loginUserMutation = useMutation({
+    mutationFn: loginUser,
+    
+    onSuccess: (data) => {
+      console.log(data);
+      auth.login(data.id, data.token);
+    },
+    onError: (error) => {
+      console.log(error)
+      console.log(data)
+    }
+  });
+
+  const onSubmitHandler = event => {
     event.preventDefault();
-    if (isLoginMode) {
+    if(isLoginMode) {
       loginUserMutation.mutate({
         email: emailRef.current.value,
         password: passwordRef.current.value
-      })
-    
+      });
     } else {
       signUpUserMutation.mutate({
         name: nameRef.current.value,
         email: emailRef.current.value,
         password: passwordRef.current.value
-      })
+      });
     }
   }
 
-  return(
+  return (
     <Card className="authentication">
-      <h2>{isLoginMode? 'LOGIN' : 'SIGNUP'}</h2>
+      <h2>{isLoginMode? 'Login': 'Sign Up'}</h2>
       <form onSubmit={onSubmitHandler}>
-        {!isLoginMode && 
-          <Input id="name" ref={nameRef} type="text" label="Name" 
-        />}
-        <Input id="email" ref={emailRef} type="text" label="Email" />
-        <Input id="password" ref={passwordRef} type="password" label="Password" />
-        <Button type="submit" disable={signUpUserMutation.isLoading}>
+        {!isLoginMode &&
+          <Input ref={nameRef} type="text" label="Name" />
+        }
+        <Input ref={emailRef} type="email" label="Email" />
+        <Input ref={passwordRef} type="password" label="Password" /> 
+        <Button type="submit">
           {isLoginMode? 'LOGIN' : 'SIGNUP'}
         </Button>
       </form>
-    <Button inverse onClick={switchModeHanlder}>
-        {isLoginMode? 'SignUp' : 'Login'} instead?
+      <Button inverse onClick={switchModeHandler}>
+        {isLoginMode? 'SignUp':'Login'} instead?
       </Button>
     </Card>
   )
