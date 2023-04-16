@@ -1,10 +1,10 @@
 // require the model
 const Joi = require('joi');
-const store = require('../models/store');
+const stores = require('../models/store');
 
 // async method that uses the functions in the model.
 const getStore = async (req, res) => {
-  const response = await store.findAll();
+  const response = await stores.findAll();
   if (response) {
     res.send(response);
   }
@@ -12,7 +12,7 @@ const getStore = async (req, res) => {
 
 const getProductById = async (req, res) => {
   const id = parseInt(req.params.id, 10);
-  const response = await store.findById(id);
+  const response = await stores.findById(id);
   if (response) {
     res.send(response);
   }
@@ -36,14 +36,13 @@ const createProduct = async (req, res) => {
     price: req.body.price,
     image: req.body.image
   }
-/*
   try {
-    const result = await store.findByStore(store);
+    const result = await stores.findByStore(store);
     if(result.length > 0) {
       res.status(400).send('Product is in the database already');
       return;
     }
-    const response = await store.create(store);
+    const response = await stores.create(store);
     if(response) {
       store.id = response.insertId;
       res.status(201).send(store);
@@ -52,12 +51,12 @@ const createProduct = async (req, res) => {
     console.log(err);
     res.status(500).send("Something went wrong");
   }
-*/
+
 };
 
 const deleteProduct = async (req, res) => {
   const id = parseInt(req.params.id, 10);
-  const response = await store.deleteById(id);
+  const response = await stores.deleteById(id);
   if (response) {
     res.send('product deleted');
   }

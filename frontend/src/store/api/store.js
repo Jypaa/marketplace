@@ -6,7 +6,7 @@ export const getStore = async () => {
   };
   
   export const createProduct = async ({product, seller, price, image, token}) => {
-    console.log(product, seller, price, image);
+    console.log("Apin viesti",product, seller, price, image);
     const res = await fetch(
       "http://localhost:5000/api/store", 
       {

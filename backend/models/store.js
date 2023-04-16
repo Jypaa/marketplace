@@ -1,5 +1,5 @@
 const db = require('../db/pool');
-const store = {
+const stores = {
   findAll: () => new Promise((resolve, reject) => {
     db.getConnection((err, connection) => {
       if (err)
@@ -30,7 +30,7 @@ const store = {
       });
     });
   }),
-  save: (store) => new Promise((resolve, reject) => {
+  create: (store) => new Promise((resolve, reject) => {
     db.getConnection((err, connection) => {
       if (err)
         return reject(err);
@@ -45,7 +45,7 @@ const store = {
     });
   }),
   findByStore: (store) => new Promise((resolve, reject) => {
-    pool.getConnection((err, connection) => {
+    db.getConnection((err, connection) => {
       if(err) {
         return reject(err);
       }
@@ -90,4 +90,4 @@ const store = {
     });
   }),
 };
-module.exports = store;
+module.exports = stores;
