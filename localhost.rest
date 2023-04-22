@@ -1,0 +1,13 @@
+GET http://localhost:5000/api/store
+
+###
+
+###
+POST http://localhost:5000/api/users/signup 
+Content-Type: application/json
+
+{
+  "name": "John Wayne",
+  "email": "john@wayne.com",
+  "password": "john@wayne"
+}
