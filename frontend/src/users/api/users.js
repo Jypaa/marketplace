@@ -1,6 +1,6 @@
 export const signUpUser = async ({name, email, password}) => {
   const res = await fetch(
-    "http://{{process.env.ADDRESS}}/api/users/signup",
+    "https://{{process.env.ADDRESS}}/api/users/signup",
     {
       method: 'POST',
       headers: {
@@ -20,7 +20,7 @@ export const signUpUser = async ({name, email, password}) => {
 
 export const loginUser = async ({email, password}) => {
   const res = await fetch(
-    "http://{{process.env.ADDRESS}}/api/users/login",
+    "https://{{process.env.ADDRESS}}/api/users/login",
     {
       method: 'POST',
       headers: {
