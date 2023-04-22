@@ -10,7 +10,7 @@ const Store = () => {
   
 const { isLoading, error, data } = useQuery("storeData", () =>
 fetch(
-  "https://{{process.env.ADDRESS}}/api/store"
+  "http://localhost:5000/api/store"
 ).then((res) => res.json())
 );
 

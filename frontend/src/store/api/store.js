@@ -1,6 +1,6 @@
 export const getStore = async () => {
     const res = await fetch(
-      "https://{{process.env.ADDRESS}}/api/store"
+      "http://localhost:5000/api/store"
     );
     return await res.json();
   };
@@ -8,7 +8,7 @@ export const getStore = async () => {
   export const createProduct = async ({product, seller, price, image, token}) => {
     //console.log("Apin viesti",product, seller, price, image);
     const res = await fetch(
-      "https://{{process.env.ADDRESS}}/api/store", 
+      "http://localhost:5000/api/store", 
       {
         method: 'POST',
         headers: {
@@ -31,7 +31,8 @@ export const getStore = async () => {
 export const deleteProduct = async ({id, token}) => {
   //console.log("Apin viesti deletellä", id);
     const res = await fetch(
-      "https://{{process.env.ADDRESS}}/api/store/" + id,
+      "http://localhost:5000/api/store/" + id,
+      
       {
         method: 'DELETE',
         headers: {
