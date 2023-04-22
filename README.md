@@ -5,3 +5,6 @@ Web Programming 2023 - Final Project
 
 
 auto deploy to render works https://store-5dzt.onrender.com/ but because free use it down put it down automaticly after inactive. 
+
+
+Jyri Pappinen
