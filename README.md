@@ -36,6 +36,7 @@ Summary from project
 Project was quite challenging, even with full example. In my opinion frontend was the easiest part and communicate between backend and database was hardest. There was also problem with api address after deploy, because I couldn't use variable for local and product so I needed to hard code for both solutions and it was only problem on deploying. After all project was very teachfull and shows bit all areas of which you need to think about when making fullstack application.
 
 Criteria
+
 1.Authenttication
 
 User registration and login functionality works as expected (8 points)
