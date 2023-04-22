@@ -84,11 +84,12 @@ Installation instructions (5 points)
 Project summary (5 points)
   
 BONUS
-  Site is responsive, works on different screen sizes (2 points)
+
+Site is responsive, works on different screen sizes (2 points)
   
-  
- Score: 
-  57/100
+Score: 
+ 
+57/100
   
   
   
