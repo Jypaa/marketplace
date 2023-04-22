@@ -77,7 +77,7 @@ Tests for all essential functionality (6 points)
 
 CI/CD workflows are in place (5 points)
 
-5.
+5.Documentation
   Installation instructions (5 points)
   Project summary (5 points)
   
