@@ -78,8 +78,10 @@ Tests for all essential functionality (6 points)
 CI/CD workflows are in place (5 points)
 
 5.Documentation
-  Installation instructions (5 points)
-  Project summary (5 points)
+
+Installation instructions (5 points)
+
+Project summary (5 points)
   
 BONUS
   Site is responsive, works on different screen sizes (2 points)
