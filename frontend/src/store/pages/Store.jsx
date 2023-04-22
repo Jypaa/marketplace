@@ -10,7 +10,7 @@ const Store = () => {
   
 const { isLoading, error, data } = useQuery("storeData", () =>
 fetch(
-  "http://localhost:5000/api/store"
+  "http://localhost:10000/api/store"
 ).then((res) => res.json())
 );
 
