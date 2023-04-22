@@ -27,7 +27,7 @@ const deleteProductMutation = useMutation({
 
 const deleteConfirmedHandler = () => {
   setShowConfirmationModal(false);
-  console.log("Do we get here?");
+  console.log("Do we get here?", props);
   deleteProductMutation.mutate({
     id: props.id,
     token: auth.token
@@ -46,7 +46,7 @@ const deleteConfirmedHandler = () => {
           </React.Fragment>
         }
       >
-        <p>Are you sure? Once it's gone, it's gone!</p>
+        <p>Do you really want to delete it?</p>
       </Modal>
     <li className="store-item">
     <Card className="store-item__content">
