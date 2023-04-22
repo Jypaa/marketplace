@@ -8,3 +8,6 @@ auto deploy to render works https://store-5dzt.onrender.com/ but because free us
 
 
 Jyri Pappinen
+
+
+![image](https://user-images.githubusercontent.com/91068474/233803274-a96a2910-d803-4192-86fa-db810f67daa0.png)
