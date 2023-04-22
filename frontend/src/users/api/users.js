@@ -1,6 +1,6 @@
 export const signUpUser = async ({name, email, password}) => {
   const res = await fetch(
-    "http://localhost:5000/api/users/signup",
+    "http://localhost:10000/api/users/signup",
     {
       method: 'POST',
       headers: {
@@ -20,7 +20,7 @@ export const signUpUser = async ({name, email, password}) => {
 
 export const loginUser = async ({email, password}) => {
   const res = await fetch(
-    "http://localhost:5000/api/users/login",
+    "http://localhost:10000/api/users/login",
     {
       method: 'POST',
       headers: {
