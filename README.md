@@ -6,33 +6,41 @@ Web Programming 2023 - Final Project
 
 auto deploy to render works https://store-5dzt.onrender.com/ but because free use it down put it down automaticly after inactive. 
 
+Installation locally needs 3 termianal 
+1. In root folder run "npm install" after that run "docker compose up -d" that makes container for database 
+2. From root folder go backend folder and run "npm install" after that run "npm start". now your backend is running 
+3. From root folder go frontend folder and run "npm install" after that run "npm run dev" and now you can go localhost:5173 and check everythings are working
 
 Jyri Pappinen
 
-
+image from render
 ![image](https://user-images.githubusercontent.com/91068474/233803274-a96a2910-d803-4192-86fa-db810f67daa0.png)
 
 Criteria
 1.Authenttication
-  User registration and login functionality works as expected (8 points)
-  Users can reset their password if they forget it (0 points)
-  User session management is implemented properly (2 points)
-  User authentication is secure, e.g validations, tokens, using password hashes (4 points)
+User registration and login functionality works as expected (8 points)
+Users can reset their password if they forget it (0 points)
+User session management is implemented properly (2 points)
+User authentication is secure, e.g validations, tokens, using password hashes (4 points)
+
 2.Listing creation
-  Users can create new listings with all required information (6 points)
-  Proper error handling for missing or incorrect listing information (1 points)
-  Users can edit or delete their own listings (2 points)
-  Listing creation is secure, e.g validations (1 points)
+Users can create new listings with all required information (6 points)
+Proper error handling for missing or incorrect listing information (1 points)
+Users can edit or delete their own listings (2 points)
+Listing creation is secure, e.g validations (1 points)
+  
 3.Listing Viewing and Searching
-  Users can view all listings (8 points)
-  User can view only own listings (0 points)
-  Users can search for listings by keyword, category, and other filters (0 points)
-  Listing lists and details are displayed in a clear and organized manner (0 points)
-  Proper error handling for missing or invalid listings (1 points)
-  Listing viewing and searching is secure e.g validation, authorization (0 points)
+Users can view all listings (8 points)
+User can view only own listings (0 points)
+Users can search for listings by keyword, category, and other filters (0 points)
+Listing lists and details are displayed in a clear and organized manner (0 points)
+Proper error handling for missing or invalid listings (1 points)
+Listing viewing and searching is secure e.g validation, authorization (0 points)
+  
 4.Quality and CI/CD
-  Tests for all essential functionality (6 points)
-  CI/CD workflows are in place (5 points)
+Tests for all essential functionality (6 points)
+CI/CD workflows are in place (5 points)
+
 5.
   
   
