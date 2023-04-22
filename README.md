@@ -5,7 +5,7 @@ Jyri Pappinen
 Web Programming 2023 - Final Project
 
 
-auto deploy to render works https://store-5dzt.onrender.com/ but because free use it down put it down automaticly after inactive. 
+auto deploy to render works https://store-5dzt.onrender.com/ but because free use it will put it down automaticly after inactive. 
 
 Installation locally needs 3 termianal
 1. First you need to make .env file to backend folder which have:
