@@ -30,7 +30,23 @@ const users = {
         resolve(result);
       });
     });
-  })
+  }),
+  findById: (id) => new Promise((resolve, reject) => {
+    //console.log("kerro", id)
+    const selectQuery = 'SELECT * FROM users WHERE id=?;';
+    pool.getConnection((err, connection) => {
+      if (err)
+        return reject(err);
+      
+      connection.query(selectQuery, id, (err, result) => {
+        connection.release();
+        if (err) {
+          return reject(err);
+        }
+        resolve(result);
+      });
+    });
+  }),
 };
 
 module.exports = users;

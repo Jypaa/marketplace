@@ -98,7 +98,19 @@ const loginUser = async (req, res) => {
 
 };
 
+const getUserById = async (req, res) => {
+  
+  const id = req.params.id;
+  //console.log("se id",req.params.id)
+  //console.log("se id intti",id)
+  const response = await users.findById(id);
+  if (response) {
+    res.send(response);
+  }
+};
+
 module.exports = {
   loginUser,
-  signUpUser
+  signUpUser,
+  getUserById
 }

@@ -11,8 +11,17 @@ const getStore = async (req, res) => {
 };
 
 const getProductById = async (req, res) => {
-  const id = parseInt(req.params.id, 10);
+  const id = req.params.id;
   const response = await stores.findById(id);
+  if (response) {
+    res.send(response);
+  }
+};
+
+const getProductByName = async (req, res) => {
+  //console.log("Mitä tulloo",req.params.name)
+  const seller = req.params.name;
+  const response = await stores.findByName(seller);
   if (response) {
     res.send(response);
   }
@@ -23,7 +32,8 @@ const createProduct = async (req, res) => {
     product: Joi.string().min(4).required(),
     seller: Joi.string().required(),
     price: Joi.string().required(),
-    image: Joi.string()
+    image: Joi.string(),
+    tunnus: Joi.string()
   });
   const { error } = schema.validate(req.body);
   if(error) {
@@ -34,7 +44,8 @@ const createProduct = async (req, res) => {
     product: req.body.product,
     seller: req.body.seller,
     price: req.body.price,
-    image: req.body.image
+    image: req.body.image,
+    tunnus: req.body.tunnus
   }
   try {
     const result = await stores.findByStore(store);
@@ -68,4 +79,5 @@ module.exports = {
   deleteProduct,
   getStore,
   getProductById,
+  getProductByName
 };

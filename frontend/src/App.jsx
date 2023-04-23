@@ -10,6 +10,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 import Store from './store/pages/Store';
 import AddProduct from './store/pages/AddProduct';
+import OwnProduct from './store/pages/OwnProduct'
 import Users from './users/pages/Users';
 import Authenticate from './users/pages/Authenticate';
 import MainNavigation from './shared/components/navigation/MainNavigation';
@@ -78,8 +79,8 @@ function App() {
         <Route path="/" exact>
           <Store />
         </Route>
-        <Route path="/users" exact>
-          <Users />
+        <Route path="/OwnProduct" exact>
+          <OwnProduct />
         </Route>
         <Route path="/store/new" exact>
           <AddProduct />

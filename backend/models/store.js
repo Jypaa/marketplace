@@ -16,12 +16,27 @@ const stores = {
   
   }),
   findById: (id) => new Promise((resolve, reject) => {
-    const selectQuery = 'SELECT * FROM store WHERE id=?;';
+    const selectQuery = 'SELECT * FROM store WHERE tunnus=?;';
     db.getConnection((err, connection) => {
       if (err)
         return reject(err);
       
       connection.query(selectQuery, id, (err, result) => {
+        connection.release();
+        if (err) {
+          return reject(err);
+        }
+        resolve(result);
+      });
+    });
+  }),
+  findByName: (seller) => new Promise((resolve, reject) => {
+    const selectQuery = 'SELECT * FROM store WHERE tunnus=?;';
+    db.getConnection((err, connection) => {
+      if (err)
+        return reject(err);
+      
+      connection.query(selectQuery, seller, (err, result) => {
         connection.release();
         if (err) {
           return reject(err);

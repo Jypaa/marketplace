@@ -4,8 +4,14 @@ export const getStore = async () => {
     );
     return await res.json();
   };
+  export const findProduct = async (name) => {
+    const res = await fetch(
+      "http://localhost:5000/api/store/seller/"+ name,
+    );
+    return await res.json();
+  };
   
-  export const createProduct = async ({product, seller, price, image, token}) => {
+  export const createProduct = async ({product, seller, price, image, token, tunnus}) => {
     //console.log("Apin viesti",product, seller, price, image);
     const res = await fetch(
       "http://localhost:5000/api/store", 
@@ -20,7 +26,8 @@ export const getStore = async () => {
           "product":product,
           "seller":seller,
           "price":price,
-          "image":image
+          "image":image,
+          "tunnus":tunnus
         })
       }
     );

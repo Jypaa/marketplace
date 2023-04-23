@@ -2,7 +2,7 @@
 const express = require('express');
 // Create a router object
 const router = express.Router();
-const { createProduct, getStore, getProductById, deleteProduct } = require('../controllers/store');
+const { getProductByName,createProduct, getStore, getProductById, deleteProduct } = require('../controllers/store');
 const verifyToken = require('../middleware/verifyToken');
 
 // Add the routes and the controller function that should handle the request
