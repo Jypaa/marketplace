@@ -61,7 +61,7 @@ Listing creation is secure, e.g validations (1 points)
 
 Users can view all listings (8 points)
 
-User can view only own listings (0 points)
+User can view only own listings (6 points)
 
 Users can search for listings by keyword, category, and other filters (0 points)
 
@@ -89,7 +89,7 @@ Site is responsive, works on different screen sizes (2 points)
   
 Score: 
  
-57/100
+66/100
   
   
   
