@@ -27,7 +27,7 @@ const productRef = useRef();
 //const sellerRef = data[0].name;
 const priceRef = useRef();
 const imageRef = useRef();
-const tunnus = userdata.userId;
+//const tunnus = userdata.userId;
 
 const auth = useContext(AuthContext);
 const history = useHistory();
@@ -46,7 +46,7 @@ const productSubmitHandler = async event => {
     price: priceRef.current.value,
     image: imageRef.current.value,
     token: auth.token,
-    tunnus: tunnus
+    tunnus: userdata.userId
   })
   history.push('/');
 };
