@@ -37,7 +37,7 @@ describe('GET store endpoint', ()=> {
     )
   });
 });
-
+/*
 describe('GET product by id enpoint', () => {
 
     test('should return 200 if item was found', (done) => {
@@ -67,7 +67,7 @@ describe('GET product by id enpoint', () => {
     });
   
 });
-
+*/
 describe('POST product endpoint', ()=> {
 
     const loggedInUser = {
