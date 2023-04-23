@@ -67,7 +67,7 @@ describe('GET product by id enpoint', () => {
     });
   
 });
-*/
+
 describe('POST product endpoint', ()=> {
 
     const loggedInUser = {
@@ -214,3 +214,4 @@ describe('POST product endpoint', ()=> {
     });
   
   });
+  */
