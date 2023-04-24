@@ -38,58 +38,58 @@ Criteria
 
 1.Authenttication
 
-User registration and login functionality works as expected (8 points)
+    User registration and login functionality works as expected (8 points)
 
-Users can reset their password if they forget it (0 points)
+    Users can reset their password if they forget it (0 points)
 
-User session management is implemented properly (2 points)
+    User session management is implemented properly (2 points)
 
-User authentication is secure, e.g validations, tokens, using password hashes (4 points)
+    User authentication is secure, e.g validations, tokens, using password hashes (4 points)
 
 2.Listing creation
 
-Users can create new listings with all required information (6 points)
+    Users can create new listings with all required information (6 points)
 
-Proper error handling for missing or incorrect listing information (1 points)
+    Proper error handling for missing or incorrect listing information (1 points)
 
-Users can edit or delete their own listings (2 points)
+    Users can edit or delete their own listings (2 points)
 
-Listing creation is secure, e.g validations (1 points)
+    Listing creation is secure, e.g validations (1 points)
 
   
 3.Listing Viewing and Searching
 
-Users can view all listings (8 points)
+    Users can view all listings (8 points)
 
-User can view only own listings (0 points)
+    User can view only own listings (6 points)
 
-Users can search for listings by keyword, category, and other filters (0 points)
+    Users can search for listings by keyword, category, and other filters (0 points)
 
-Listing lists and details are displayed in a clear and organized manner (0 points)
+    Listing lists and details are displayed in a clear and organized manner (0 points)
 
-Proper error handling for missing or invalid listings (1 points)
+    Proper error handling for missing or invalid listings (1 points)
 
-Listing viewing and searching is secure e.g validation, authorization (0 points)
+    Listing viewing and searching is secure e.g validation, authorization (0 points)
   
 4.Quality and CI/CD
 
-Tests for all essential functionality (6 points)
+    Tests for all essential functionality (6 points)
 
-CI/CD workflows are in place (5 points)
+    CI/CD workflows are in place (5 points)
 
 5.Documentation
 
-Installation instructions (5 points)
+    Installation instructions (5 points)
 
-Project summary (5 points)
+    Project summary (5 points)
   
 BONUS
 
-Site is responsive, works on different screen sizes (2 points)
+    Site is responsive, works on different screen sizes (2 points)
   
 Score: 
  
-57/100
+    66/100
   
   
   
